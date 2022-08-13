@@ -1,19 +1,19 @@
 #include <unistd.h>
 
-void ft_putchar(char c)
+void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
 
-void ft_putstr(char *str)
+void	ft_putstr(char *str)
 {
 	while (*str)
 		write(1, str++, 1);
 }
 
-void ft_putnbr(int nb)
+void	ft_putnbr(int nb)
 {
-	int nbr;
+	int	nbr;
 
 	if (nb < 0)
 	{
@@ -27,9 +27,9 @@ void ft_putnbr(int nb)
 	ft_putchar(nbr % 10 + 48);
 }
 
-int ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i] != '\0')
@@ -37,11 +37,11 @@ int ft_strlen(char *str)
 	return (i);
 }
 
-int ft_atoi(char *str)
+int	ft_atoi(char *str)
 {
-	int i;
-	int nbr;
-	int rep;
+	int	i;
+	int	nbr;
+	int	rep;
 
 	i = 0;
 	nbr = 0;

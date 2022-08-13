@@ -1,25 +1,33 @@
-int check(int tab[4][4], int pos, int nbr[16]);
+int	check(int tab[4][4], int pos, int nbr[16]);
+int	ft_strlen(char *str);
 
-int is_double(int tab[4][4], int pos, int num)
+int	test_possible(int argc, char **argv)
 {
-	int i;
-
-	i = 0;
-	while (i < pos / 4)
-		if (tab[i][pos % 4] == num)
-			return (1);
-		i++;
-	i = 0;
-	while (i < pos % 4)
-		if (tab[pos / 4][i] == num)
-			return (1);
-		i++;
+	if (argc != 2)
+		return (1);
+	if (ft_strlen(argv[1]) != 31)
+		return (1);
 	return (0);
 }
 
-int process(int tab[4][4], int nbr[16], int pos)
+int	is_double(int tab[4][4], int pos, int num)
 {
-	int size;
+	int	i;
+
+	i = -1;
+	while (++i < pos / 4)
+		if (tab[i][pos % 4] == num)
+			return (1);
+	i = -1;
+	while (++i < pos % 4)
+		if (tab[pos / 4][i] == num)
+			return (1);
+	return (0);
+}
+
+int	process(int tab[4][4], int nbr[16], int pos)
+{
+	int	size;
 
 	if (pos == 16)
 		return (1);
